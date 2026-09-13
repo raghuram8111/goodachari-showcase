@@ -17,56 +17,46 @@ export default function ImpactSection() {
   };
 
   return (
-    <section id="impact" className="py-20 bg-[#0a0e17] border-b border-slate-800/80 relative">
+    <section id="impact" className="py-24 bg-[#0a0e17] border-b border-slate-800/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 tracking-wider uppercase mb-2">
-            <span className="w-2 h-2 rounded-sm bg-cyan-500"></span>
-            <span>13 / Value Proposition</span>
+          <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2">
+            13 / Operational Value
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-mono">
             Potential Impact
           </h2>
-          <p className="mt-3 text-base text-slate-300 leading-relaxed">
-            Tangible operational improvements enabled by replacing speculative manual surveillance with data-driven satellite intelligence.
+          <p className="mt-3 text-base text-slate-400 leading-relaxed font-sans">
+            Tangible operational improvements enabled by replacing manual surveillance with automated satellite intelligence.
           </p>
         </div>
 
         {/* Realistic Grounding Note */}
-        <div className="mb-10 p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3">
+        <div className="mb-14 p-4 rounded-lg bg-slate-900/60 border border-slate-800 flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <span className="text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
-              Engineering Feasibility Grounding
-            </span>
-            <p className="text-xs font-mono text-slate-300 leading-relaxed">
-              We present verifiable systemic advantages based on actual spatial automation workflows. In accordance with rigorous scientific evaluation, we avoid unsubstantiated marketing percentages.
-            </p>
-          </div>
+          <p className="text-xs font-mono text-slate-300 leading-relaxed">
+            We present verifiable systemic advantages based on actual spatial automation workflows. In accordance with rigorous scientific evaluation, we avoid unsubstantiated marketing percentages.
+          </p>
         </div>
 
         {/* Impact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {IMPACT_POINTS.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between hover:-translate-y-1"
+              className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700/60 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mb-4">
                   {getImpactIcon(item.title)}
                 </div>
                 <h3 className="text-sm font-bold font-mono text-white mb-2 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
                   {item.desc}
                 </p>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-400">
-                Systemic Benefit
               </div>
             </div>
           ))}

@@ -37,7 +37,7 @@ export default function Navbar() {
       items: [
         { name: 'What We Built', href: '#prototype', desc: 'Core proof-of-concept stack & scope' },
         { name: 'Prototype Workflow', href: '#workflow', desc: '9-step pipeline & decision states' },
-        { name: 'Technology Stack', href: '#tech-stack', desc: 'Layers: HTML, Node, PostGIS' },
+        { name: 'Technology Stack', href: '#tech-stack', desc: 'HTML, Node.js, PostGIS, S2/Landsat' },
         { name: 'System Architecture', href: '#architecture', desc: 'Data flow from satellite to reports' },
         { name: 'Inside the Prototype', href: '#screenshots', desc: 'Gallery of prototype views' },
         { name: 'Demo Video', href: '#demo', desc: 'Video demonstration walkthrough' },
@@ -70,59 +70,48 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
         scrolled
-          ? 'bg-[#080c14]/95 backdrop-blur-md border-b border-slate-800 shadow-xl shadow-black/40'
-          : 'bg-[#080c14]/85 backdrop-blur-sm border-b border-slate-800/60'
+          ? 'bg-[#080c14]/95 backdrop-blur-md border-b border-slate-800/80 shadow-lg'
+          : 'bg-[#080c14]/90 backdrop-blur-sm border-b border-slate-800/50'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Name */}
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-9 h-9 rounded-lg bg-slate-900 border border-cyan-500/40 flex items-center justify-center shadow-inner group-hover:border-cyan-400 transition-colors">
-              <Satellite className="w-5 h-5 text-cyan-400 animate-pulse" />
-              <span className="absolute -top-1 -right-1 flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
+            <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center group-hover:border-cyan-500/50 transition-colors">
+              <Satellite className="w-4 h-4 text-cyan-400" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-lg font-bold tracking-wider text-white group-hover:text-cyan-400 transition-colors">
-                  GODACHARI
-                </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono font-medium uppercase tracking-wider rounded bg-cyan-950/80 text-cyan-300 border border-cyan-700/50">
-                  SIH 2026
-                </span>
-              </div>
-              <p className="text-[10px] text-slate-400 font-mono tracking-tight hidden md:block">
-                Land Intelligence & Monitoring
-              </p>
+            <div className="flex items-baseline gap-2">
+              <span className="font-mono text-base font-bold tracking-wider text-white group-hover:text-cyan-300 transition-colors">
+                GODACHARI
+              </span>
+              <span className="hidden sm:inline-block text-[11px] font-mono text-slate-400">
+                SIH 2026 Showcase
+              </span>
             </div>
           </a>
 
-          {/* Grouped Desktop Navigation (Clean on Laptops & Desktops) */}
-          <nav className="hidden lg:flex items-center space-x-1 font-mono">
-            {/* Direct Overview Link */}
+          {/* Grouped Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-2 font-mono">
             <a
               href="#hero"
-              className="px-3 py-2 text-xs font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60 rounded-md transition-colors"
+              className="px-3 py-1.5 text-xs text-slate-300 hover:text-white hover:bg-slate-800/60 rounded transition-colors"
             >
               Overview
             </a>
 
-            {/* Dropdown Groups */}
             {menuGroups.map((group) => {
               const isOpen = activeDropdown === group.id;
               return (
                 <div key={group.id} className="relative">
                   <button
                     onClick={() => toggleDropdown(group.id)}
-                    className={`flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-md transition-colors ${
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs rounded transition-colors ${
                       isOpen
-                        ? 'text-cyan-300 bg-slate-800/90'
-                        : 'text-slate-300 hover:text-cyan-300 hover:bg-slate-800/60'
+                        ? 'text-cyan-300 bg-slate-800'
+                        : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                     }`}
                   >
                     <span>{group.label}</span>
@@ -135,8 +124,8 @@ export default function Navbar() {
 
                   {/* Dropdown Menu Panel */}
                   {isOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-72 rounded-xl bg-slate-950 border border-slate-800 shadow-2xl p-2 z-50 animate-fade-in">
-                      <div className="px-2.5 py-1.5 border-b border-slate-800/80 mb-1 flex items-center gap-1.5 text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
+                    <div className="absolute top-full left-0 mt-1 w-72 rounded-lg bg-slate-900 border border-slate-800 shadow-xl p-2 z-50">
+                      <div className="px-2.5 py-1 mb-1 flex items-center gap-1.5 text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
                         {group.icon}
                         <span>{group.label}</span>
                       </div>
@@ -146,13 +135,13 @@ export default function Navbar() {
                             key={item.name}
                             href={item.href}
                             onClick={() => setActiveDropdown(null)}
-                            className="block px-2.5 py-2 rounded-lg hover:bg-slate-900 transition-colors group"
+                            className="block px-2.5 py-1.5 rounded hover:bg-slate-800 transition-colors group"
                           >
                             <div className="text-xs font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors flex items-center justify-between">
                               <span>{item.name}</span>
-                              <ChevronRight className="w-3 h-3 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-0.5 transition-all" />
+                              <ChevronRight className="w-3 h-3 text-slate-600 group-hover:text-cyan-400 transition-all" />
                             </div>
-                            <div className="text-[10px] text-slate-400 mt-0.5 leading-tight font-sans">
+                            <div className="text-[11px] text-slate-400 mt-0.5 leading-tight font-sans">
                               {item.desc}
                             </div>
                           </a>
@@ -166,20 +155,19 @@ export default function Navbar() {
           </nav>
 
           {/* Quick CTA Actions */}
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2.5">
             <a
               href="#prototype"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-semibold text-emerald-300 bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 hover:border-emerald-400 rounded transition-all shadow-sm"
+              className="px-3 py-1.5 text-xs font-mono font-medium text-emerald-300 bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/30 rounded transition-colors"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
               Prototype Specs
             </a>
             <a
               href="#demo"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-semibold text-cyan-300 bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/40 hover:border-cyan-400 rounded transition-all shadow-sm"
+              className="px-3 py-1.5 text-xs font-mono font-medium text-cyan-300 bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-500/30 rounded transition-colors flex items-center gap-1"
             >
               Watch Demo
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-3 h-3" />
             </a>
           </div>
 
@@ -188,10 +176,10 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
-              className="p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="p-2 rounded text-slate-400 hover:text-white hover:bg-slate-800"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-cyan-400" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -199,20 +187,11 @@ export default function Navbar() {
 
       {/* Mobile menu drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0a0f1d] border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 shadow-2xl max-h-[85vh] overflow-y-auto">
-          <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
-            <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">
-              Site Index • SIH 2026
-            </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
-              Prototype Showcase
-            </span>
-          </div>
-
+        <div className="lg:hidden bg-[#0a0f1d] border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
           <a
             href="#hero"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-xs font-mono text-slate-200 bg-slate-900 rounded-md"
+            className="block px-3 py-2 text-xs font-mono text-slate-200 bg-slate-900 rounded"
           >
             Overview
           </a>
@@ -229,7 +208,7 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-3 py-2 rounded-md bg-slate-900/60 hover:bg-slate-800 text-xs font-mono text-slate-300 hover:text-cyan-300 flex items-center justify-between"
+                    className="px-3 py-1.5 rounded bg-slate-900/60 hover:bg-slate-800 text-xs font-mono text-slate-300 hover:text-cyan-300 flex items-center justify-between"
                   >
                     <span>{item.name}</span>
                     <ChevronRight className="w-3 h-3 text-slate-600" />
@@ -243,14 +222,14 @@ export default function Navbar() {
             <a
               href="#prototype"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2 px-3 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-medium"
+              className="w-full text-center py-2 px-3 rounded bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 text-xs font-mono"
             >
               Explore Implemented Prototype
             </a>
             <a
               href="#demo"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2 px-3 rounded bg-cyan-950/60 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-medium"
+              className="w-full text-center py-2 px-3 rounded bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono"
             >
               Watch Video Demonstration
             </a>

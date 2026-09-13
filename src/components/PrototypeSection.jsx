@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Database, Server, Monitor, CheckCircle, AlertCircle, Cpu, Satellite, FileText, Bell, Eye } from 'lucide-react';
+import { Layers, Database, Server, Monitor, AlertCircle, Cpu, Satellite, FileText, Bell, Eye } from 'lucide-react';
 
 export default function PrototypeSection() {
   const prototypeFeatures = [
@@ -18,110 +18,86 @@ export default function PrototypeSection() {
   ];
 
   return (
-    <section id="prototype" className="py-20 bg-[#0a0e17] border-b border-slate-800/80 relative">
+    <section id="prototype" className="py-24 bg-[#0a0e17] border-b border-slate-800/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 tracking-wider uppercase mb-2">
-            <span className="w-2 h-2 rounded-sm bg-emerald-500"></span>
-            <span>03 / Implemented Scope</span>
+          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2">
+            03 / Implemented Scope
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-mono">
             What We Built
           </h2>
-          {/* Core Mandated Statement */}
-          <div className="mt-4 p-4 rounded-lg bg-emerald-950/30 border border-emerald-500/40 text-emerald-300 font-mono text-sm leading-relaxed">
+          <div className="mt-4 p-4 rounded-lg bg-emerald-950/20 border border-emerald-500/30 text-emerald-300 font-mono text-sm leading-relaxed">
             "Our prototype demonstrates the core technical workflow of satellite-based land-change detection and investigation."
           </div>
         </div>
 
         {/* Prototype Core Tech Triad */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
           {/* Frontend */}
-          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 relative overflow-hidden">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 uppercase tracking-wide">
-                <Monitor className="w-4 h-4" />
-                <span>Prototype Frontend</span>
-              </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800">
-                Lightweight Native
-              </span>
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div className="flex items-center gap-2 text-xs font-mono font-semibold text-cyan-400 uppercase tracking-wide mb-3">
+              <Monitor className="w-4 h-4" />
+              <span>Prototype Frontend</span>
             </div>
-            <div className="text-xl font-bold font-mono text-white mb-2">
+            <div className="text-lg font-bold font-mono text-white mb-2">
               HTML + CSS + Vanilla JS
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Engineered with zero bloated frontend frameworks for the client prototype. Delivers instant interactive map rendering, split-pane satellite comparison, and direct asynchronous REST API consumption.
+            <p className="text-xs text-slate-400 leading-relaxed font-sans">
+              Lightweight browser client delivering responsive map rendering, dual-pane satellite comparisons, and asynchronous REST API consumption without frontend bloat.
             </p>
           </div>
 
           {/* Backend */}
-          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 relative overflow-hidden">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 uppercase tracking-wide">
-                <Server className="w-4 h-4" />
-                <span>Prototype Backend</span>
-              </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
-                Asynchronous API
-              </span>
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wide mb-3">
+              <Server className="w-4 h-4" />
+              <span>Prototype Backend</span>
             </div>
-            <div className="text-xl font-bold font-mono text-white mb-2">
+            <div className="text-lg font-bold font-mono text-white mb-2">
               Node.js + Express
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Modular REST services managing spatial query dispatching, raster difference threshold parameters, case state transitions, alert streams, and audit trail persistence.
+            <p className="text-xs text-slate-400 leading-relaxed font-sans">
+              Asynchronous REST services managing spatial query handling, reflectance difference parameters, case state transitions, alert streams, and audit logging.
             </p>
           </div>
 
           {/* Database */}
-          <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-800 relative overflow-hidden">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2 text-xs font-mono font-bold text-indigo-400 uppercase tracking-wide">
-                <Database className="w-4 h-4" />
-                <span>Spatial Database</span>
-              </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800">
-                GIS Persistence
-              </span>
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div className="flex items-center gap-2 text-xs font-mono font-semibold text-indigo-400 uppercase tracking-wide mb-3">
+              <Database className="w-4 h-4" />
+              <span>Spatial Database</span>
             </div>
-            <div className="text-xl font-bold font-mono text-white mb-2">
+            <div className="text-lg font-bold font-mono text-white mb-2">
               PostgreSQL + PostGIS
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Relational data store augmented with the PostGIS spatial engine. Handles polygon geometries, spatial indexes (GiST), intersection queries, and investigation records.
+            <p className="text-xs text-slate-400 leading-relaxed font-sans">
+              Relational persistence with PostGIS spatial extensions. Handles polygon geometries, spatial indexes (GiST), topological intersections, and investigation dossiers.
             </p>
           </div>
         </div>
 
-        {/* Implemented Prototype Capabilities Grid */}
-        <div className="mb-10">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-mono font-bold text-white flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-emerald-400" />
-              <span>Concrete Capabilities Implemented in the Prototype</span>
-            </h3>
-            <span className="text-xs font-mono text-slate-400 hidden sm:inline">
-              12 Core Modules Active
-            </span>
-          </div>
+        {/* Implemented Capabilities Grid - Clean and Uncluttered */}
+        <div className="mb-12">
+          <h3 className="text-base font-mono font-bold text-white mb-6">
+            Implemented Prototype Capabilities
+          </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {prototypeFeatures.map((feat, i) => (
               <div
                 key={i}
-                className="p-3.5 rounded-lg bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-colors flex items-start gap-3"
+                className="p-4 rounded-lg bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 transition-colors flex items-start gap-3.5"
               >
-                <div className="p-1.5 rounded bg-slate-800/80 border border-slate-700 mt-0.5">
+                <div className="p-2 rounded bg-slate-800 flex-shrink-0 mt-0.5">
                   {feat.icon}
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono font-bold text-slate-100 flex items-center gap-2">
+                  <h4 className="text-xs font-mono font-bold text-slate-200">
                     {feat.title}
-                    <span className="text-[9px] font-mono text-emerald-400 bg-emerald-950/60 px-1 rounded">✓</span>
                   </h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                  <p className="text-xs text-slate-400 mt-1 leading-relaxed font-sans">
                     {feat.desc}
                   </p>
                 </div>
@@ -130,16 +106,15 @@ export default function PrototypeSection() {
           </div>
         </div>
 
-        {/* Explicit Prototype Scope Disclaimer */}
-        <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex items-start gap-3 text-xs text-slate-400 font-mono">
+        {/* Prototype Scope Disclaimer */}
+        <div className="p-5 rounded-xl bg-slate-900/30 border border-slate-800 flex items-start gap-3.5 text-xs text-slate-400">
           <AlertCircle className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <span className="text-amber-400 font-bold uppercase tracking-wider">
-              Prototype Scope Boundary & Disclaimer
+          <div className="space-y-1 font-sans">
+            <span className="text-amber-400 font-mono font-semibold uppercase tracking-wider block">
+              Prototype Scope Boundary
             </span>
             <p className="leading-relaxed">
-              "The prototype is a proof-of-concept and is not intended to represent the complete government-scale deployment."
-              It verifies the fundamental physics and geospatial algorithms of multi-spectral Earth observation change detection on demonstration AOIs before national-scale scale-up.
+              "The prototype is a proof-of-concept and is not intended to represent the complete government-scale deployment." It demonstrates the core remote-sensing physics and spatial workflow on targeted demonstration AOIs.
             </p>
           </div>
         </div>
