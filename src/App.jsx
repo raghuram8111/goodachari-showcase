@@ -1,9 +1,11 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProblemSection from './components/ProblemSection';
 import ApproachSection from './components/ApproachSection';
 import PrototypeSection from './components/PrototypeSection';
+import NbkristDemoSection from './components/NbkristDemoSection';
 import WorkflowDiagram from './components/WorkflowDiagram';
 import TechStack from './components/TechStack';
 import ArchitectureDiagram from './components/ArchitectureDiagram';
@@ -18,10 +20,10 @@ import ReferencesSection from './components/ReferencesSection';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 
-function App() {
+function AppContent() {
   return (
-    <div className="min-h-screen bg-[#080c14] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Sticky Top Navigation */}
+    <div className="min-h-screen bg-slate-50 dark:bg-[#080c14] text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-900 dark:selection:text-cyan-200 transition-colors">
+      {/* Sticky Top Navigation with Light/Dark Mode Toggle */}
       <Navbar />
 
       {/* Main Showcase Flow */}
@@ -38,37 +40,40 @@ function App() {
         {/* 4. Current Prototype (What We Built) */}
         <PrototypeSection />
 
-        {/* 5. Prototype Workflow (9-Step Interactive Pipeline) */}
+        {/* 5. Real-World Prototype Demonstration (NBKRIST Campus AOI) */}
+        <NbkristDemoSection />
+
+        {/* 6. Prototype Workflow (9-Step Interactive Pipeline) */}
         <WorkflowDiagram />
 
-        {/* 6. Technology Stack (Organized by Architectural Layer) */}
+        {/* 7. Technology Stack (Organized by Architectural Layer) */}
         <TechStack />
 
-        {/* 7. Prototype Architecture (Data Flow Pipeline) */}
+        {/* 8. Prototype Architecture (Data Flow Pipeline) */}
         <ArchitectureDiagram />
 
-        {/* 8. Prototype Screenshots (Inside the Prototype Gallery + Lightbox) */}
+        {/* 9. Prototype Screenshots (Inside the Prototype Gallery + Lightbox) */}
         <ScreenshotGallery />
 
-        {/* 9. Demo Video (Prototype Demonstration) */}
+        {/* 10. Demo Video (Prototype Demonstration) */}
         <VideoSection />
 
-        {/* 10. Prototype vs Final Solution (Strategic Comparison Matrix) */}
+        {/* 11. Prototype vs Final Solution (Strategic Comparison Matrix) */}
         <PrototypeVsFinal />
 
-        {/* 11. Final System Workflow (Government-Scale Automated Pipeline) */}
+        {/* 12. Final System Workflow (Government-Scale Automated Pipeline) */}
         <FinalSystemWorkflow />
 
-        {/* 12. Future Integrations (What Comes Next) */}
+        {/* 13. Future Integrations (What Comes Next) */}
         <FutureIntegrations />
 
-        {/* 13. Role-Based Access Control (RBAC Tree) */}
+        {/* 14. Role-Based Access Control (RBAC Tree) */}
         <RBACDiagram />
 
-        {/* 14. Potential Impact (Why This Matters) */}
+        {/* 15. Potential Impact (Why This Matters) */}
         <ImpactSection />
 
-        {/* 15. References & Documentation */}
+        {/* 16. References & Documentation */}
         <ReferencesSection />
       </main>
 
@@ -81,4 +86,10 @@ function App() {
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
+  );
+}

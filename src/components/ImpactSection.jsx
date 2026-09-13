@@ -5,37 +5,37 @@ import { IMPACT_POINTS } from '../data/showcaseData';
 export default function ImpactSection() {
   const getImpactIcon = (title) => {
     switch (title) {
-      case 'Faster Land-Change Identification': return <Zap className="w-5 h-5 text-cyan-400" />;
-      case 'Reduced Manual Monitoring Effort': return <Users className="w-5 h-5 text-emerald-400" />;
-      case 'Evidence-Assisted Investigation': return <FileSearch className="w-5 h-5 text-indigo-400" />;
-      case 'Earlier Identification of Suspicious Work': return <Clock className="w-5 h-5 text-amber-400" />;
-      case 'Better Use of Earth Observation': return <Globe2 className="w-5 h-5 text-teal-400" />;
-      case 'Scalable Monitoring Architecture': return <Maximize className="w-5 h-5 text-cyan-400" />;
-      case 'Improved Verification Coordination': return <GitMerge className="w-5 h-5 text-emerald-400" />;
-      default: return <ShieldCheck className="w-5 h-5 text-cyan-400" />;
+      case 'Faster Land-Change Identification': return <Zap className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
+      case 'Reduced Manual Monitoring Effort': return <Users className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
+      case 'Evidence-Assisted Investigation': return <FileSearch className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />;
+      case 'Earlier Identification of Suspicious Work': return <Clock className="w-5 h-5 text-amber-600 dark:text-amber-400" />;
+      case 'Better Use of Earth Observation': return <Globe2 className="w-5 h-5 text-teal-600 dark:text-teal-400" />;
+      case 'Scalable Monitoring Architecture': return <Maximize className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
+      case 'Improved Verification Coordination': return <GitMerge className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
+      default: return <ShieldCheck className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
     }
   };
 
   return (
-    <section id="impact" className="py-24 bg-[#0a0e17] border-b border-slate-800/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="impact" className="py-24 bg-white dark:bg-[#0a0e17] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+      <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
             13 / Operational Value
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-mono">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
             Potential Impact
           </h2>
-          <p className="mt-3 text-base text-slate-400 leading-relaxed font-sans">
+          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
             Tangible operational improvements enabled by replacing manual surveillance with automated satellite intelligence.
           </p>
         </div>
 
         {/* Realistic Grounding Note */}
-        <div className="mb-14 p-4 rounded-lg bg-slate-900/60 border border-slate-800 flex items-start gap-3">
-          <ShieldCheck className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-          <p className="text-xs font-mono text-slate-300 leading-relaxed">
+        <div className="mb-14 p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm">
+          <ShieldCheck className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
+          <p className="text-xs font-mono text-slate-800 dark:text-slate-300 leading-relaxed">
             We present verifiable systemic advantages based on actual spatial automation workflows. In accordance with rigorous scientific evaluation, we avoid unsubstantiated marketing percentages.
           </p>
         </div>
@@ -45,16 +45,16 @@ export default function ImpactSection() {
           {IMPACT_POINTS.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between"
+              className="p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors flex flex-col justify-between shadow-sm"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-4">
                   {getImpactIcon(item.title)}
                 </div>
-                <h3 className="text-sm font-bold font-mono text-white mb-2 leading-snug">
+                <h3 className="text-sm font-bold font-mono text-slate-900 dark:text-white mb-2 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                   {item.desc}
                 </p>
               </div>

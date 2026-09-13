@@ -1,13 +1,13 @@
-# GODACHARI | AI-Powered Land Intelligence and Monitoring System
-### SIH 2026 Prototype & Technical Showcase Website
+# GOODACHARI (SIH 2026 Team) | AI-Powered Land Intelligence and Monitoring System
+### Prototype & Technical Showcase Website
 
-A production-quality, responsive technical showcase website for **Godachari**, engineered for the **Smart India Hackathon (SIH) 2026** evaluation jury and public presentation.
+A production-quality, responsive technical showcase website by Team **Goodachari**, engineered for the **Smart India Hackathon (SIH) 2026** evaluation jury and public presentation.
 
 ---
 
 ## 🛰️ Project Overview
 
-- **Project Name:** Godachari
+- **Team Name:** GOODACHARI (SIH 2026 Team)
 - **Project Title:** AI-Powered Land Intelligence and Monitoring System
 - **Tagline:** "Transforming multi-temporal satellite imagery into actionable land-change intelligence."
 - **Scope:** Technical case study and prototype showcase explaining our working proof-of-concept, architecture, technology stack, and transparent evolution into the broader government-scale deployment.
@@ -73,7 +73,7 @@ The website automatically loads screenshots from these paths and opens them in a
 12. **Future Integrations:** 8 roadmap cards (Indian EO data, cadastral polygons, land records, zoning bylaws, automated alerts, regional RBAC, advanced AI, large-scale processing).
 13. **Role-Based Access Control (RBAC):** Hierarchical governance tree for **ADMIN** and **AUTHORIZED OFFICER**.
 14. **Potential Impact:** 7 realistic engineering benefits grounded in spatial automation (no fake marketing metrics).
-15. **References:** Citations for Copernicus Sentinel-2, Landsat 8-9, PostGIS, Esri World Imagery, and ISRO Bhuvan.
+15. **References:** Citations for Copernicus Sentinel-2, PostGIS, Esri World Imagery, and ISRO Bhuvan.
 16. **Navigation & Controls:** Sticky navbar, mobile menu drawer, and floating Back-to-Top button.
 
 ---

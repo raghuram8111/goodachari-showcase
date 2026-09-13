@@ -1,4 +1,4 @@
-# Godachari Showcase Assets
+# Goodachari Showcase Assets
 
 Place your real prototype screenshots and demo video in this directory structure:
 

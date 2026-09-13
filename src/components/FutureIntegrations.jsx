@@ -5,30 +5,30 @@ import { FUTURE_INTEGRATIONS } from '../data/showcaseData';
 export default function FutureIntegrations() {
   const getIcon = (iconName) => {
     switch (iconName) {
-      case 'Satellite': return <Satellite className="w-5 h-5 text-cyan-400" />;
-      case 'MapPin': return <MapPin className="w-5 h-5 text-emerald-400" />;
-      case 'Database': return <Database className="w-5 h-5 text-indigo-400" />;
-      case 'FileCheck': return <FileCheck className="w-5 h-5 text-teal-400" />;
-      case 'BellRing': return <BellRing className="w-5 h-5 text-amber-400" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-cyan-400" />;
-      case 'Cpu': return <Cpu className="w-5 h-5 text-rose-400" />;
-      case 'Server': return <Server className="w-5 h-5 text-blue-400" />;
-      default: return <Satellite className="w-5 h-5 text-cyan-400" />;
+      case 'Satellite': return <Satellite className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
+      case 'MapPin': return <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />;
+      case 'Database': return <Database className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />;
+      case 'FileCheck': return <FileCheck className="w-5 h-5 text-teal-600 dark:text-teal-400" />;
+      case 'BellRing': return <BellRing className="w-5 h-5 text-amber-600 dark:text-amber-400" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
+      case 'Cpu': return <Cpu className="w-5 h-5 text-rose-600 dark:text-rose-400" />;
+      case 'Server': return <Server className="w-5 h-5 text-blue-600 dark:text-blue-400" />;
+      default: return <Satellite className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />;
     }
   };
 
   return (
-    <section id="future" className="py-24 bg-[#0a0e17] border-b border-slate-800/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="future" className="py-24 bg-white dark:bg-[#0a0e17] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+      <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-2">
+          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
             11 / Roadmap
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight font-mono">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
             What Comes Next
           </h2>
-          <p className="mt-3 text-base text-slate-400 leading-relaxed font-sans">
+          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
             Key integrations required to transition the validated proof-of-concept into a nationwide land intelligence platform.
           </p>
         </div>
@@ -38,23 +38,23 @@ export default function FutureIntegrations() {
           {FUTURE_INTEGRATIONS.map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors flex flex-col justify-between"
+              className="p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors flex flex-col justify-between shadow-sm"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center">
                     {getIcon(item.icon)}
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium">
                     {item.readiness}
                   </span>
                 </div>
 
-                <h3 className="text-sm font-bold font-mono text-white mb-2">
+                <h3 className="text-sm font-bold font-mono text-slate-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                   {item.desc}
                 </p>
               </div>
