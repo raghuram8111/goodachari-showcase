@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Satellite, ChevronDown, ChevronRight, Layers, Globe, Shield, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -33,39 +33,35 @@ export default function Navbar() {
 
   const menuGroups = [
     {
-      id: 'prototype',
-      label: 'Current Prototype',
+      id: 'evidence',
+      label: 'Prototype Evidence',
       icon: <Layers className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />,
       items: [
-        { name: 'What We Built', href: '#prototype', desc: 'Core proof-of-concept stack & scope' },
-        { name: 'NBKRIST Campus Demo', href: '#nbkrist-demo', desc: 'Real-world campus AOI evaluation' },
-        { name: 'Prototype Workflow', href: '#workflow', desc: '9-step pipeline & decision states' },
-        { name: 'Technology Stack', href: '#tech-stack', desc: 'HTML, Node.js, PostGIS, Sentinel-2' },
-        { name: 'System Architecture', href: '#architecture', desc: 'Data flow from satellite to reports' },
-        { name: 'Inside the Prototype', href: '#screenshots', desc: 'Gallery of prototype views' },
-        { name: 'Demo Video', href: '#demo', desc: 'Video demonstration walkthrough' },
+        { name: 'Demo Video', href: '#demo', desc: 'Working prototype screen walkthrough' },
+        { name: 'NBKRIST Campus AOI', href: '#nbkrist-demo', desc: 'Real-world campus evaluation demonstration' },
+        { name: 'Prototype Interface', href: '#screenshots', desc: 'Real user interface screenshot catalog' },
+      ],
+    },
+    {
+      id: 'architecture',
+      label: 'How It Works & Tech',
+      icon: <Layers className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" />,
+      items: [
+        { name: 'How It Works', href: '#workflow', desc: 'Sequential 6-step prototype pipeline' },
+        { name: 'Technical Architecture', href: '#architecture', desc: 'Frontend, Node.js, PostGIS, Sentinel-2' },
+        { name: 'Prototype Data Pipeline', href: '#data-pipeline', desc: 'End-to-end data flow pipeline' },
       ],
     },
     {
       id: 'vision',
-      label: 'Vision & Roadmap',
-      icon: <Globe className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" />,
+      label: 'Final System Vision',
+      icon: <Globe className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />,
       items: [
-        { name: 'The Problem', href: '#problem', desc: 'Why land monitoring needs intelligence' },
-        { name: 'Final Solution Concept', href: '#approach', desc: 'Target end-to-end concept' },
-        { name: 'Prototype vs Final', href: '#final-vision', desc: 'Side-by-side strategic comparison' },
-        { name: 'Government Workflow', href: '#final-workflow', desc: 'Automated 12-tier pipeline' },
-        { name: 'Future Integrations', href: '#future', desc: 'Target: Official Indian EO, Cadastral, Land Records' },
-      ],
-    },
-    {
-      id: 'governance',
-      label: 'Governance & Impact',
-      icon: <Shield className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />,
-      items: [
-        { name: 'RBAC Model', href: '#rbac', desc: 'Admin & Authorized Officer roles' },
-        { name: 'Potential Impact', href: '#impact', desc: 'Engineered operational benefits' },
-        { name: 'References & Standards', href: '#references', desc: 'Copernicus Sentinel-2, PostGIS docs' },
+        { name: 'Prototype vs Final', href: '#prototype-vs-final', desc: 'Side-by-side strategic comparison' },
+        { name: 'Final System Vision', href: '#final-workflow', desc: 'Proposed 8-stage automated workflow' },
+        { name: 'Future Integrations', href: '#future', desc: 'Target: Indian EO, Cadastral, Land Records' },
+        { name: 'RBAC Model', href: '#rbac', desc: 'Jurisdictional role-based access' },
+        { name: 'Impact & References', href: '#impact', desc: 'Operational benefits & technical standards' },
       ],
     },
   ];
@@ -81,7 +77,7 @@ export default function Navbar() {
     >
       <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         <div className="flex items-center justify-between h-16">
-          {/* Brand Logo & Name - GOODACHARI (Team Name) */}
+          {/* Brand Logo & Name */}
           <a href="#hero" className="flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-center justify-center group-hover:border-cyan-500/50 transition-colors">
               <Satellite className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
@@ -92,7 +88,7 @@ export default function Navbar() {
                   GOODACHARI
                 </span>
                 <span className="text-[10px] font-mono font-medium uppercase px-1.5 py-0.2 rounded bg-cyan-100 dark:bg-cyan-950/80 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-700/50">
-                  SIH 2026 Team
+                  SIH 2026 TEAM
                 </span>
               </div>
               <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono tracking-tight hidden sm:block">
@@ -169,7 +165,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 border border-slate-200 dark:border-slate-700 transition-colors"
+              className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer"
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4 text-amber-400" />
@@ -179,10 +175,10 @@ export default function Navbar() {
             </button>
 
             <a
-              href="#prototype"
+              href="#nbkrist-demo"
               className="hidden sm:inline-block px-3 py-1.5 text-xs font-mono font-medium text-emerald-800 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/40 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 border border-emerald-300 dark:border-emerald-500/30 rounded transition-colors"
             >
-              Prototype Specs
+              Explore Prototype
             </a>
             <a
               href="#demo"
@@ -242,7 +238,7 @@ export default function Navbar() {
 
           <div className="pt-2 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
             <a
-              href="#prototype"
+              href="#nbkrist-demo"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full text-center py-2 px-3 rounded bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono"
             >

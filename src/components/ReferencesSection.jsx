@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { REFERENCES_LIST } from '../data/showcaseData';
 
@@ -8,14 +8,11 @@ export default function ReferencesSection() {
       <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
-            14 / Standards & Citations
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
-            References & Standards
+            REFERENCES & STANDARDS
           </h2>
-          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-            Technical manuals, Earth observation specifications, spatial database references, and research literature underpinning the Goodachari architecture.
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+            Technical manuals, Earth observation specifications, spatial database references, and research literature underpinning the GOODACHARI architecture.
           </p>
         </div>
 

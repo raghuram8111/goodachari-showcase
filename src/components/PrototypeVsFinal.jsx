@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Check, ArrowRight, CheckCircle2, Globe2 } from 'lucide-react';
 import { PROTOTYPE_VS_FINAL } from '../data/showcaseData';
 
@@ -6,18 +6,15 @@ export default function PrototypeVsFinal() {
   const { prototype, finalVision } = PROTOTYPE_VS_FINAL;
 
   return (
-    <section id="final-vision" className="py-24 bg-white dark:bg-[#0a0e17] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <section id="prototype-vs-final" className="py-24 bg-white dark:bg-[#0a0e17] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
       <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
-            09 / Strategic Comparison
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
-            From Prototype to Final System
+            PROTOTYPE → FINAL SYSTEM
           </h2>
-          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-            A transparent architectural comparison distinguishing what has been implemented in the working prototype versus the broader government-scale roadmap.
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+            A clear distinction between what has been built in the current working prototype versus the proposed government-scale final system.
           </p>
         </div>
 
@@ -59,7 +56,7 @@ export default function PrototypeVsFinal() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center justify-between">
-              <span className="text-emerald-700 dark:text-emerald-400 font-medium">Status: Functioning Proof-of-Concept</span>
+              <span className="text-emerald-700 dark:text-emerald-400 font-semibold">Status: Implemented & Verified</span>
               <span>Scope: NBKRIST Campus AOI</span>
             </div>
           </div>
@@ -100,8 +97,8 @@ export default function PrototypeVsFinal() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-600 dark:text-slate-400 flex items-center justify-between">
-              <span className="text-cyan-700 dark:text-cyan-400 font-medium">Status: Target Operational Architecture</span>
-              <span>Scope: Statewide / National</span>
+              <span className="text-cyan-700 dark:text-cyan-400 font-semibold">Status: Proposed Future Architecture</span>
+              <span>Scope: Statewide / Nationwide</span>
             </div>
           </div>
         </div>

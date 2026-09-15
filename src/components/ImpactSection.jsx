@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Zap, Users, FileSearch, Clock, Globe2, Maximize, GitMerge, ShieldCheck } from 'lucide-react';
 import { IMPACT_POINTS } from '../data/showcaseData';
 
@@ -20,23 +20,12 @@ export default function ImpactSection() {
     <section id="impact" className="py-24 bg-white dark:bg-[#0a0e17] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
       <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
-            13 / Operational Value
-          </div>
+        <div className="max-w-3xl mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
-            Potential Impact
+            POTENTIAL IMPACT
           </h2>
-          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
             Tangible operational improvements enabled by replacing manual surveillance with automated satellite intelligence.
-          </p>
-        </div>
-
-        {/* Realistic Grounding Note */}
-        <div className="mb-14 p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm">
-          <ShieldCheck className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
-          <p className="text-xs font-mono text-slate-800 dark:text-slate-300 leading-relaxed">
-            We present verifiable systemic advantages based on actual spatial automation workflows. In accordance with rigorous scientific evaluation, we avoid unsubstantiated marketing percentages.
           </p>
         </div>
 
@@ -48,7 +37,7 @@ export default function ImpactSection() {
               className="p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-colors flex flex-col justify-between shadow-sm"
             >
               <div>
-                <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center mb-4 shadow-sm">
                   {getImpactIcon(item.title)}
                 </div>
                 <h3 className="text-sm font-bold font-mono text-slate-900 dark:text-white mb-2 leading-snug">

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { ArrowDown, Satellite, Cpu, Layers, Database, Server, Globe, Monitor, FileSpreadsheet } from 'lucide-react';
 
 export default function ArchitectureDiagram() {
@@ -6,13 +6,13 @@ export default function ArchitectureDiagram() {
     {
       id: "node-1",
       title: "Satellite Data Ingestion",
-      tech: "Sentinel-2 (MSI) Surface Reflectance",
+      tech: "Sentinel-2 Surface Reflectance",
       desc: "Calibrated Level-2A surface reflectance optical bands (B4, B8, B11, B12) at 10m-20m spatial resolution.",
       icon: <Satellite className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />,
     },
     {
       id: "node-2",
-      title: "AI / Change Detection Service",
+      title: "Change Detection Service",
       tech: "Multi-Band Spectral Differencing",
       desc: "Pixel-wise differential computation across NDVI, NDBI, and surface reflectance indices.",
       icon: <Cpu className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
@@ -40,20 +40,13 @@ export default function ArchitectureDiagram() {
     },
     {
       id: "node-6",
-      title: "REST APIs",
-      tech: "JSON & GeoJSON Streaming",
-      desc: "Secure API endpoints providing change vectors, basemap layers, and triage queues.",
-      icon: <Globe className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />,
-    },
-    {
-      id: "node-7",
       title: "Web Frontend Client",
-      tech: "HTML5, CSS3, Vanilla JavaScript",
+      tech: "HTML / CSS / Vanilla JavaScript",
       desc: "Native browser geospatial client featuring split-pane compare and case review tools.",
       icon: <Monitor className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />,
     },
     {
-      id: "node-8",
+      id: "node-7",
       title: "Investigation / Alerts / Reports",
       tech: "Evidence Dossiers & Export",
       desc: "Persisted determinations (Confirmed / Rejected / Uncertain) and structured summary reports.",
@@ -62,18 +55,15 @@ export default function ArchitectureDiagram() {
   ];
 
   return (
-    <section id="architecture" className="py-24 bg-slate-50 dark:bg-[#080c14] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
+    <section id="data-pipeline" className="py-24 bg-slate-50 dark:bg-[#080c14] border-b border-slate-200 dark:border-slate-800/60 transition-colors">
       <div className="w-[92%] lg:w-[94%] max-w-[1480px] mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider mb-2">
-            06 / Technical Architecture
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight font-mono">
-            Prototype Architecture
+            PROTOTYPE DATA PIPELINE
           </h2>
-          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
-            Data flows in a clean, sequential pipeline from satellite reflectance acquisition down to authorized investigator review.
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+            End-to-end data flow from Sentinel-2 reflectance ingestion down to authorized investigator decision.
           </p>
         </div>
 
